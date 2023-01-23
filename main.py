@@ -13,7 +13,7 @@ def clear():
 
 clear() # class the function
 
-celebrities = {'Cristiano Ronaldo':515, 'Lionel Messi':390, 'Neymar Jr':194, 'Kylian Mbappé':78, 'David Beckham':76, 'Ronaldinho':70, 'Karim Benzema':62, 'Zlatan Ibrahimović':56, 'Sergio Ramos':54, 'Mohamed Salah':53, 'Paulo Dybala':51, 'Gareth Bale':49, 'Luis Suarez':45, 'Andrés Iniesta':41, 'Antoine Griezmann':37, 'Toni Kroos':36, 'Zinedine Zidane':35, 'Robert Lewandowski':31, 'Eden Hazard':27, 'Luka Modric':26}
+celebrities = {'Cristiano Ronaldo':515, 'Lionel Messi':390, 'Neymar Jr':194, 'Kylian Mbappé':78, 'David Beckham':76, 'Ronaldinho':70, 'Karim Benzema':62, 'Zlatan Ibrahimović':56, 'Sergio Ramos':54, 'Mohamed Salah':53, 'Paulo Dybala':51, 'Gareth Bale':49, 'Luis Suarez':45, 'Andrés Iniesta':41, 'Antoine Griezmann':37, 'Toni Kroos':36, 'Zinedine Zidane':35, 'Robert Lewandowski':31, 'Eden Hazard':27, 'Luka Modric':26, 'Leonardo Bonucci':5, 'Hakan Çalhanoglu':2, 'Alessandro Bastoni':1}
 
 game_over = False
 score = 0
@@ -54,6 +54,7 @@ while game_over == False:
       print(f"You're right!")
       score += 1
       print(f"Current score: {score}.")
+      celebrities.pop(celebrity2_name, celebrity2_followers)
       celebrity2_name = random.choice(list(celebrities.keys()))
       while celebrity2_name == celebrity1_name:
         celebrity2_name = random.choice(list(celebrities.keys()))
@@ -74,6 +75,7 @@ while game_over == False:
       print(f"You're right!")
       score += 1
       print(f"Current score: {score}.")
+      celebrities.pop(celebrity1_name, celebrity1_followers)
       celebrity1_name = celebrity2_name
       celebrity1_followers = celebrities.get(celebrity1_name)
       celebrity2_name = random.choice(list(celebrities.keys()))
